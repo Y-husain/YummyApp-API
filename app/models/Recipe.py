@@ -8,7 +8,7 @@ class Recipe(db.Model):
 
     __tablename__ = 'Recipe'
 
-    recipe_id = db.Column(db.Integer(), primary_key=True, authoincrement=True)
+    recipe_id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
 
     recipe_name = db.Column(db.String(256))
 
@@ -20,9 +20,9 @@ class Recipe(db.Model):
 
     date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
 
-    user_id = db.Column(db.Integer, db.ForeignKey(User.user_id))
-
     category_id = db.Column(db.Integer, db.ForeignKey(Category.category_id))
+
+    user_id = db.Column(db.Integer, db.ForeignKey(User.user_id))
 
     def __init__(self, recipe_id, recipe_name, user_id, category_id, directions=None, ingredients=None):
         self.recipe_id = recipe_id

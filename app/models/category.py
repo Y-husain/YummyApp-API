@@ -23,7 +23,6 @@ class Category(db.Model):
         """initialize category table"""
         self.category_id = category_id
         self.category_name = category_name
-        self.user_id = user_id
         self.recipes = recipes
 
     def save(self):
