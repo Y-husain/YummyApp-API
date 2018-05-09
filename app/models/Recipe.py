@@ -31,7 +31,7 @@ class Recipe(db.Model):
         self.category_id = category_id
         self.directions = directions
         self.ingredients = ingredients
-        
+
     def save(self):
         db.session.add(self)
         db.session.commit()
